@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar and Cards Example</title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+   <%- include("../components/navbar.ejs") %>
+
+   <div style="display: flex;flex-wrap: wrap;">
+     <!-- Cards Section -->
+<% blogs.forEach((blog)=>{ %>
+    <div class="card" >
+        <img src="<%- blog.image %>" alt="Card Image">
+        <div class="title"><%- blog.title %></div>
+        <a href="/blog/<%-blog._id  %>">See more</a>
+    </div>
+ <% }) %>
+
+    
+   </div>
+
+  
+
+</body>
+
+</html>
